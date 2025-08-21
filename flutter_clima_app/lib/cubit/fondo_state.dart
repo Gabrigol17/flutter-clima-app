@@ -8,3 +8,7 @@ sealed class FondoState extends Equatable {
 }
 
 final class FondoInitial extends FondoState {}
+
+final class FondoFrio extends FondoState {}
+
+final class FondoCalido extends FondoState {}

@@ -8,8 +8,11 @@ class ClimaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Clima App")),
+      appBar: AppBar(backgroundColor: Colors.black,title: Text(
+        "☁️ App del Clima", style: TextStyle(color: Colors.white)), 
+        centerTitle: true),
 
+      body: BlocBuilder<FondoCubit, FondoState>(
         builder: (context, fondoState) {
           Color fondo;
 

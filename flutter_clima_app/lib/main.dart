@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_clima_app/API/geolocator.dart';
-import 'package:flutter_clima_app/API/peticionApi.dart';
 import 'package:flutter_clima_app/Ventanas/inicio.dart';
 import 'package:flutter_clima_app/bloc/clima_bloc.dart';
+import 'package:flutter_clima_app/cubit/fondo_cubit.dart';
 
 void main() {
   runApp(
-    BlocProvider(
-      create: (context) => ClimaBloc(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => ClimaBloc()),
+        BlocProvider(create: (_) => FondoCubit()),
+      ],
       child: MaterialApp(
+        home: ClimaApp(),
         debugShowCheckedModeBanner: false,
-        home: ClimaApp(), // <-- tu widget principal
       ),
     ),
   );

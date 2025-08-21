@@ -13,6 +13,7 @@ void main() {
       ],
       child: MaterialApp(
         home: ClimaApp(),
+        debugShowCheckedModeBanner: false,
       ),
     ),
   );

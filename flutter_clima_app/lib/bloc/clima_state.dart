@@ -8,3 +8,20 @@ sealed class ClimaState extends Equatable {
 }
 
 final class ClimaInitial extends ClimaState {}
+final class ClimaLoading extends ClimaState {}
+final class ClimaLoaded extends ClimaState {
+  final ModeloClima clima;
+  ClimaLoaded(this.clima);
+
+  @override
+  List<Object> get props => [clima];
+}
+
+final class ClimaError extends ClimaState {
+  final String mensaje;
+
+  ClimaError(this.mensaje);
+
+  @override
+  List<Object> get props => [mensaje];
+}
